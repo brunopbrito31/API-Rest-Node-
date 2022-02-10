@@ -3,6 +3,7 @@ const mailService = {
     enviarEmail (destinatario, assunto, texto) {
         var nodemailer = require('nodemailer');
         const MAIL_PASSWORD = process.env.Mailer_Password;
+        const MAIL_USER = 'brunopbrito31@gmail.com';
 
         let data = texto;
 
@@ -12,7 +13,7 @@ const mailService = {
             secure: true, 
             service: 'gmail',
             auth: {
-                user: 'brunopbrito31@gmail.com',
+                user: MAIL_USER,
                 pass: MAIL_PASSWORD
             }
         });
